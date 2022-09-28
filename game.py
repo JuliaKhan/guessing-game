@@ -14,9 +14,9 @@ def guessing(low=1, high=100):
     name = input("Howdy, what's your name? ")
     print(f"{name}, I'm thinking of a number between {low} and {high}.")
     print("Try to guess my number.")
-    keep_playing = True
     best_score = None
-    while keep_playing == True:
+
+    while True:
         count = 0
         guess = 0
         num = random.randint(low, high)
@@ -33,6 +33,7 @@ def guessing(low=1, high=100):
                 print("Your guess is too low, try again.")
             if guess > num:
                 print("Your guess is too high, try again.")
+                
         print(f"Well done, {name}! You found my number in {count} tries.")
         if best_score == None or best_score > count:
             best_score = count
